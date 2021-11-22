@@ -4,7 +4,7 @@ namespace API.Repositories
 {
     public interface IBaseLeituraRepository<T> where T : EntityBase
     {
-        void Gravar(T obj);
-        void Atualizar(T obj);
+        IEnumerable<T> BuscarTodos();
+        T BuscarPorId(int id);
     }
 }

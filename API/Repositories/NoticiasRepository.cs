@@ -27,7 +27,7 @@ namespace API.Repositories
             _noticias.Remove(noticia);
         }
 
-        public void Gravar(Noticias obj)
+        public void Salvar(Noticias obj)
         {
             _noticias.Add(obj);
         }

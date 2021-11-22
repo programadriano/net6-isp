@@ -4,14 +4,13 @@ namespace API.Repositories
 {
     public class CidadeRepository : IBaseLeituraRepository<Cidade>
     {
-        public void Atualizar(Cidade obj)
-        {
-            throw new NotImplementedException();
-        }
+        private static IList<Cidade> _cidade = new List<Cidade>();
 
-        public void Gravar(Cidade obj)
+        public Cidade BuscarPorId(int id) => _cidade.FirstOrDefault(c => c.Id == id);
+
+        public IEnumerable<Cidade> BuscarTodos()
         {
-            throw new NotImplementedException();
+            return _cidade.ToList();
         }
     }
 }

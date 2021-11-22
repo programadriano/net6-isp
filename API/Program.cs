@@ -11,9 +11,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddSingleton<IBaseLeituraRepository<Cidade>,CidadeRepository>();
+//builder.Services.AddSingleton<IBaseLeituraRepository<Cidade>, CidadeRepository>();
+//builder.Services.AddSingleton<IBaseLeituraRepository<Noticias>, NoticiasRepository>();
+//builder.Services.AddSingleton<IBaseEscritaRepository<Noticias>, NoticiasRepository>();
 
-builder.Services.AddSingleton<NoticiasRepository>();
+
+builder.Services.AddSingleton<IBaseLeituraRepository<Cidade>,CidadeRepository>();
 builder.Services.AddSingleton<IBaseEscritaRepository<Noticias>>(x => x.GetRequiredService<NoticiasRepository>());
 builder.Services.AddSingleton<IBaseLeituraRepository<Noticias>>(x => x.GetRequiredService<NoticiasRepository>());
 
